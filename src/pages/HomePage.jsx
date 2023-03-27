@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import styles from '../styles/HomeStyle'
 import Feedback from '../components/Feedback'
 import Navbar from '../components/Navbar'
+import MainScreen from '../components/MainScreen'
 
 function HomePage(props) {
   return (
@@ -20,7 +21,7 @@ function HomePage(props) {
         </div>
         <div className={`bg-primary ${styles.flexStart}`}>
             <div className={`${styles.boxWidth}`}>
-                Main Screen
+            <MainScreen/>
             </div>
         </div>
         <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>

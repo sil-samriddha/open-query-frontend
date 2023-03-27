@@ -22,7 +22,8 @@ function Feedback(props) {
               <label htmlFor="message" className="block mb-2 text-sm font-medium text-[#820747]-900">Your message</label>
               <textarea id="message" rows="6" className={`shadow-sm block w-full p-2.5 rounded border border-gray-900 text-gray-900 ${props.mode==="black"? "":"focus:outline-none focus:ring focus:ring-[#820747]"}`} placeholder="Leave a comment..."></textarea>
           </div>
-          <button type="submit" className={`bg-transparent hover:bg-${props.mode==="black"?"[rgba(255,255,255,0.3)]":"[#820747]"} font-semibold py-3 px-5 text-sm font-medium text-center ${props.mode==="black"?"":"hover:text-zinc-50"} border border-${props.mode==="black"?"white-500":"[#820747]"} py-2 px-4 hover:border-transparent rounded`}>Send message</button>
+          <button type="submit" className={`bg-transparent hover:bg-${props.mode==="black"?"[rgba(255,255,255,0.3)]":"[#820747]"} font-semibold py-3 px-5 text-sm font-medium text-center ${props.mode==="black"?"":"hover:bg-[#820747] hover:text-zinc-50"} border py-2 px-4 hover:border-transparent rounded`}
+        style={props.mode==="black"?{borderColor : "white"}:{borderColor: "#820747"}}>Send message</button>
       </form>
   </div>
 </section>
