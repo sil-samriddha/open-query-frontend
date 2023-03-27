@@ -1,6 +1,6 @@
 export const fetchResponse =  async(chat) => {
     try {
-        const response = await fetch('http://localhost:3080', { 
+        const response = await fetch('http://localhost:4000', { 
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -13,6 +13,7 @@ export const fetchResponse =  async(chat) => {
         const data = await response.json()
         return data
     } catch (error) {
-        console.log(error);
+        alert(error);
+        console.log("error")
     }
 }

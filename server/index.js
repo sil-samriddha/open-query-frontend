@@ -12,25 +12,25 @@ app.use(cors())
 app.use(bodyParser.json())
 
 
-// Configure open api
+// Configure
 const configuration = new Configuration({
     organization: "org-5d5ojcAOKgoWhCgNjBYV7hsV",
-    apiKey: process.env.API_KEY // VISIT .env AND MAKE CHANGES
+    apiKey: process.env.API_KEY 
 })
 const openai = new OpenAIApi(configuration)
 
-
+const port = 4000
 // listeninng
-app.listen("3080", ()=>console.log("listening on port 3080"))
+app.listen(port, ()=>console.log(`listening on port ${port}`))
 
 
-// dummy route to test
+// dummy route
 app.get("/", (req, res) => {
-    res.send("Hello World!")
+    res.send(`Server is running on port : ${port}`)
 })
 
 
-//post route for making requests
+//post route
 app.post('/', async (req, res)=>{
     const {message} = req.body
 
