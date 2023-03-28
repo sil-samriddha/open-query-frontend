@@ -30,7 +30,7 @@ const ChatInput = (props) => {
           e.keyCode === 13 && e.shiftKey === false && handleSubmit();
         }}
         className='border-0 bg-transparent outline-none w-11/12 overflow-auto resize-none
-        scrollbar scrollbar-thumb-pink-100 scrollbar-track-transparent scrollbar-thin scrollbar-thumb-rounded-md'
+       scrollbar-thumb-pink-100 scrollbar-track-transparent scrollbar-thin scrollbar-thumb-rounded-md'
         style={props.mode==="black"?{}:{color: "rgba(130, 7, 71,1)"}}
         value={value}
         type="text"

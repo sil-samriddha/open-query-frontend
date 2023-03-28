@@ -17,7 +17,7 @@ function Sample(props) {
         }
   return (
     <div className=" gap-2 py-8 px-4 self-center
-    scrollbar scrollbar-thumb-pink-100 scrollbar-track-transparent scrollbar-thin scrollbar-thumb-rounded-md
+ scrollbar-thumb-pink-100 scrollbar-track-transparent scrollbar-thin scrollbar-thumb-rounded-md
     relative sm:px-16 overflow-hidden flex flex-col justify-between align-middle">
         {/* user side interface */}
         <div className={`border-[#999999] break-words border-2 rounded-xl self-end py-3 px-3 max-w-[80%]`}

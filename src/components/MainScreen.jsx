@@ -6,7 +6,7 @@ function MainScreen(props) {
     <div>
         <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
             <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
-                 <div className='flex flex-row items-center py-[6px] px-4  rounded-[10px] mb-2'>
+                 <div className='flex flex-row items-center py-[6px] px-1 rounded-[10px] mb-2'>
                   <p>
                     <span style={props.mode==="black"?{color: "#e6bcfe", fontWeight: "bolder"}:{color: "#763261", fontWeight: "bolder"}}>Free</span> &nbsp;
                     <span style={props.mode==="black"?{color: "rgba(255,255,255,0.7)"}:{color: "rgba(171, 73, 141, 0.7)"}}>&</span> &nbsp; 
@@ -20,17 +20,37 @@ function MainScreen(props) {
                     style={props.mode==="black"?{backgroundImage: "linear-gradient(to right,  #a957d9, #d998a0, #e6bcfe, #7e2a64)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}:
                     {backgroundImage: "linear-gradient(to right, #861657 0%, #ffa69e 74%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Solve Queries</h1>
                     
-                    <span className="ss:text-[50px] text-[42px]" style={props.mode==="black"?{color: "rgba(255,255,255,1)"}:{color: "rgba(176, 74, 144, 0.5)"}}>through Holistic Intelligence</span>
+                    <span className="ss:text-[50px] text-[42px]" style={props.mode==="black"?{color: "rgba(255,255,255,1)"}:{color: "rgba(176, 74, 144, 0.5)"}}>through</span>
                   </h1>
+                  <div className='ss:flex md:mr-4 m-0'>
+                    <div className={`${styles.flexCenter} w-[160px] h-[160px] rounded-full p-[2px]`}>
+                      <div className={`${styles.flexCenter} flex-col rounded-full`}>
 
+                        <img src={props.mode==="black"?"/assets/getstarted_black.png":"/assets/getstarted_pink.png"} alt="get started" />
+                      </div>
+                    </div>
+                  </div>
                  </div>
-        
-                
+                 <h1 className='font-semibold ss:text-[68px] text-[45px] ss:leading-[100px] leading-[75px] w-full'>
+                 Holistic Intelligence
+                 </h1>
+                 <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
+                 The ultimate AI-powered virtual assistant that revolutionizes the way you communicate! <br/>
+                 It's designed to provide human-like interactions, answer questions, and assist with tasks such as language translation and text summarization, all at lightning-fast speeds!
+                 </p>
+            </div>
+            <div>
+              <img src="/assets/Main_page.png" alt="" className=' w-[100%] h-[100%] relative z-[5]' />
+              <div className='absolute z-[0] w-[40%] h-[35%] top-[180px] rounded-full'
+              style={{background: "#ff00ea", filter: props.mode==="black"?"blur(160px)":"blur(360px)", pointerEvents: "none"}}/>
+              <div className='absolute z-[0] w-[40%] h-[35%] bottom-[10px] rounded-full'
+              style={{background: "#7aebfb", filter: props.mode==="black"?"blur(150px)":"blur(350px)" , pointerEvents: "none"}}/>
+            
             </div>
             
         </section>
         <br />
-        The ultimate AI-powered virtual assistant that revolutionizes the way you communicate!
+        
     </div>
   )
 }

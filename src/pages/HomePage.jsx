@@ -5,7 +5,6 @@ import styles from '../styles/HomeStyle'
 import Feedback from '../components/Feedback'
 import Navbar from '../components/Navbar'
 import MainScreen from '../components/MainScreen'
-
 function HomePage(props) {
   return (
     <div className="w-full overflow-hidden"
@@ -14,7 +13,6 @@ function HomePage(props) {
         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
             <div className={`${styles.boxWidth}`}>
             <Navbar mode={props.mode} toggleMode={props.toggleMode}/>
-            <button onClick = {()=>{props.toggleMode(), alert("Mode changed")}} >Change mode</button>
                 
             </div>
             
