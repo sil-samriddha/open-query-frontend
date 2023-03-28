@@ -47,7 +47,7 @@ function Chatarea(props) {
           Home
           </button>
         </div>
-        <div className="row-end-3 row-span-2 font-bold  text-2xl text-center mb-3">
+        <div className="row-end-3 row-span-2 font-bold text-2xl text-center mb-3">
           Open Query
         </div>
         <div className="row-start-1 row-end-4 text-right"

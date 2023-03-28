@@ -21,7 +21,7 @@ function HomePage(props) {
         </div>
         <div className={`bg-primary ${styles.flexStart}`}>
             <div className={`${styles.boxWidth}`}>
-            <MainScreen/>
+            <MainScreen mode={props.mode}/>
             </div>
         </div>
         <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
