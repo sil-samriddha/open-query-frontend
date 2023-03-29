@@ -23,10 +23,10 @@ function MainScreen(props) {
                     <span className="ss:text-[50px] text-[42px]" style={props.mode==="black"?{color: "rgba(255,255,255,1)"}:{color: "rgba(176, 74, 144, 0.5)"}}>through</span>
                   </h1>
                   <div className='ss:flex md:mr-4 m-0'>
-                    <div className={`${styles.flexCenter} w-[160px] h-[160px] rounded-full p-[2px]`}>
+                    <div className={`${styles.flexCenter} w-[160px] h-[160px] rounded-full`}>
                       <div className={`${styles.flexCenter} flex-col rounded-full`}>
 
-                        <img src={props.mode==="black"?"/assets/getstarted_black.png":"/assets/getstarted_pink.png"} alt="get started" />
+                        <img className='w-[160px] h-[160px]' src={props.mode==="black"?"/assets/getstarted_black2.png":"/assets/getstarted_pink2.png"} alt="get started" />
                       </div>
                     </div>
                   </div>
@@ -44,7 +44,7 @@ function MainScreen(props) {
               <div className='absolute z-[0] w-[40%] h-[35%] top-[180px] rounded-full'
               style={{background: "#ff00ea", filter: props.mode==="black"?"blur(160px)":"blur(360px)", pointerEvents: "none"}}/>
               <div className='absolute z-[0] w-[40%] h-[35%] bottom-[10px] rounded-full'
-              style={{background: "#7aebfb", filter: props.mode==="black"?"blur(150px)":"blur(350px)" , pointerEvents: "none"}}/>
+              style={{background: "#7aebfb", filter: props.mode==="black"?"blur(150px)":"blur(250px)" , pointerEvents: "none"}}/>
             
             </div>
             
