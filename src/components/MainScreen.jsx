@@ -18,7 +18,7 @@ function MainScreen(props) {
                   <h1 className='flex-1 font-semibold ss:text-[72px] text-[52px] ss:leading-[100px] leading-[75px]'>
                     <h1
                     style={props.mode==="black"?{backgroundImage: "linear-gradient(to right,  #a957d9, #d998a0, #e6bcfe, #7e2a64)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}:
-                    {backgroundImage: "linear-gradient(to right, #861657 0%, #ffa69e 74%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Solve Queries</h1>
+                    {backgroundImage: "linear-gradient(to right, #861657 0%, #de5b9f 74%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Solve Queries</h1>
                     
                     <span className="ss:text-[50px] text-[42px]" style={props.mode==="black"?{color: "rgba(255,255,255,1)"}:{color: "rgba(176, 74, 144, 0.5)"}}>through</span>
                   </h1>

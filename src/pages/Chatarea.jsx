@@ -44,7 +44,7 @@ function Chatarea(props) {
         <div className="row-start-1 row-span-2 w-30 text-left"
         style={props.mode==='black'?{}:{color: "rgba(130, 7, 71,1)"}}>
         <button className='w-15'>
-          Home
+          <img src={props.mode==="black"?"/assets/home_white.png":"/assets/home_pink.png"} alt="" className='w-10 h-10' />
           </button>
         </div>
         <div className="row-end-3 row-span-2 font-bold text-2xl text-center mb-3">
@@ -53,14 +53,14 @@ function Chatarea(props) {
         <div className="row-start-1 row-end-4 text-right"
         style={props.mode==='black'?{}:{color: "rgba(130, 7, 71,1)"}}>
           <button className='w-15' onClick={props.toggle}>
-          {props.mode === "black" ? "Light" : "Dark"}
+          <img src={props.mode==="black"?"/assets/light_mode.png":"/assets/dark_mode.png"} alt="" className='w-10 h-10' />
           </button>
         </div>
       </div>
 
       {/* body */}
       <div className={`h-[90%] overflow-auto w-full max-w-4xl min-w-[20rem] py-8 px-4 self-center
-      scrollbar scrollbar-thumb-pink-100 scrollbar-track-transparent scrollbar-thin scrollbar-thumb-rounded-md`}>
+     scrollbar-thumb-pink-100 scrollbar-track-transparent scrollbar-thin scrollbar-thumb-rounded-md`}>
 
         <ChatBody mode={props.mode} chat={chat}/>
       </div>

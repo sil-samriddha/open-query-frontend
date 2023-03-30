@@ -18,9 +18,9 @@ const ChatInput = (props) => {
         {props.loading?
           <>
           {props.mode==="black"? 
-          <img src="./assets/loading_white.gif" className='w-8 m-auto' alt="loading"/>
+          <img src="./assets/loading_white.gif" className='w-7 h-7 m-auto' alt="loading"/>
           :
-          <img src="./assets/loading_pink.gif" className='w-8 m-auto' alt="loading"/>
+          <img src="./assets/loading_pink.gif" className='w-7 h-7 m-auto' alt="loading"/>
           }
           </>
           :

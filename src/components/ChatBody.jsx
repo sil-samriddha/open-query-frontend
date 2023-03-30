@@ -2,6 +2,18 @@ import React, { useEffect, useRef } from 'react'
 import autoAnimate from '@formkit/auto-animate';
 
 function ChatBody(prop) {
+  // Speech synthesis
+  const synth = window.speechSynthesis;
+  const handleSpeak = (message) => {
+    const utterance = new SpeechSynthesisUtterance(message);
+    utterance.voice = synth.getVoices()[2];
+    utterance.rate = 1.3;
+    if (synth.speaking) {
+      synth.cancel();
+    } else {
+      synth.speak(utterance);
+    }
+  };
     const aiStyle = 
         prop.mode==='black'?
             {background : "rgba(152, 86, 141, 0.4)"
@@ -53,14 +65,20 @@ function ChatBody(prop) {
                       {message.sender === "ai" ? (
                         <div className="flex items-stretch">
                           <div className="py-1 px-1">
-                            <button className="bg-transparent hover:bg-[rgba(255,255,255,0.3)] text-white-900 font-semibold py-2 px-4 border border-white-300 hover:border-2 rounded focus:ring-4 focus:ring-[#FFFFFF] focus:ring-opacity-50"
+                            <button className="bg-transparent hover:bg-[rgba(255,255,255,0.3)] text-white-900 font-semibold py-2 px-4 border border-white-300 rounded focus:ring-4 focus:ring-[#FFFFFF] focus:ring-opacity-50"
                             onClick={()=>{navigator.clipboard.writeText(message.message), alert("Copied ! ")}}>
                               Copy
                             </button>
                           </div>
                           <div className="py-1 px-1">
-                            <button className="bg-transparent hover:bg-[rgba(255,255,255,0.3)] text-white-900 font-semibold py-2 px-4 border border-white-300 hover:border-2 rounded focus:ring-4 focus:ring-[#FFFFFF] focus:ring-opacity-50">
+                            <button className="bg-transparent hover:bg-[rgba(255,255,255,0.3)] text-white-900 font-semibold py-2 px-4 border border-white-300 rounded focus:ring-4 focus:ring-[#FFFFFF] focus:ring-opacity-50">
                               Feedback
+                            </button>
+                          </div>
+                          <div className="py-1 px-1 justify-right">
+                            <button className={`bg-transparent hover:bg-[rgba(255,255,255,0.3)] text-white-900 font-semibold py-2 px-4 border border-white-300 rounded focus:ring-4 focus:ring-[#FFFFFF] focus:ring-opacity-50`}
+                            id="speak" onClick={()=>handleSpeak(message.message)}>
+                              <img src="/assets/speak.png" className='h-6 w-6' alt="speak"/>
                             </button>
                           </div>
                         </div>

@@ -5,6 +5,8 @@ import styles from '../styles/HomeStyle'
 import Feedback from '../components/Feedback'
 import Navbar from '../components/Navbar'
 import MainScreen from '../components/MainScreen'
+import Feature2 from '../components/Feature2'
+import Tech from '../components/Tech'
 function HomePage(props) {
   return (
     <div className="w-full overflow-hidden"
@@ -30,10 +32,15 @@ function HomePage(props) {
                 mode={props.mode}
                 userChat="Hello there I am the user" 
                 aiChat="Hello user, I am Open Query"/>
+                
 
                 </div>
-                What makes Zoho Open Query the best live chat software?
-                Technology & dependencies
+                <h2 className={styles.heading2} align="center">
+                What makes Open Query the best live chat software?
+                </h2>
+                <Feature2 mode={props.mode}/>
+                <Tech/>
+                
                 <Feedback mode={props.mode}/>
                 
                 
