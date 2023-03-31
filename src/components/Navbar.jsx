@@ -6,17 +6,22 @@ function Navbar(props) {
   const [menuToggle, setMenuToggle] = useState(false);
   return (
     <div>
-      <nav className={`w-full flex py-6 justify-between items-center navbar`}>
+      <nav className={`w-full flex py-2 justify-between items-center navbar`}>
         <img src="./assets/icon.png" alt="Open Query" className="h-[40px]" />{" "}
         OpenQuery
+        
+{/* Navbar for Large Screen */}
+
         <ul
           className={`list-none sm:flex hidden justify-end items-center flex-1`}
         >
           {navLinks.map((nav, index) => (
             <li
-              className={`cursor-pointer text-[16px] m-10 ${
+              className={`cursor-pointer text-[16px] m-10 rounded-xl px-4 py-2
+               ${
                 index === navLinks.length - 1 ? "mr-0" : "mr-10"
               }`}
+              style={props.mode==="black"?{backgroundColor: "rgba(169, 87, 217, 0.3)", border: "1px solid white"}:{backgroundColor: "rgba(222, 91, 159,0.3)", border: "1px solid rgb(222, 91, 159)"}}
               key={nav.id}
             >
               <a herf={`/${nav.id}`}> {nav.title}</a>
@@ -39,6 +44,9 @@ function Navbar(props) {
             </button>
           </li>
         </ul>
+
+{/* NavLinks for Small Screen Devices */}
+
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
             src={

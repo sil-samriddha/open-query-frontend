@@ -18,10 +18,10 @@ function App() {
   }
   return (
     <div className="App">
-      <HomePage mode={Mode} toggleMode={toggleMode}/>
-      {/* <QueryClientProvider client={queryClient}>
+      {/* <HomePage mode={Mode} toggleMode={toggleMode}/> */}
+      <QueryClientProvider client={queryClient}>
         <Chatarea mode={Mode} toggle={toggleMode}/>
-      </QueryClientProvider> */}
+      </QueryClientProvider>
     </div>
   )
 }

@@ -16,20 +16,25 @@ function ChatBody(prop) {
   };
     const aiStyle = 
         prop.mode==='black'?
-            {background : "rgba(152, 86, 141, 0.4)"
+            {background : "rgba(152, 86, 141, 0.4)",
+            borderRadius: '5px 30px', overflow: 'hidden'
         }:{
           background: " linear-gradient(326deg, rgba(189,9,103, 0.5) 15% , rgba(150, 9, 83, 0.7) 35%, rgba(130, 7, 71,0.95) 80%)",
           border: "none",
+          borderRadius: '5px 30px', overflow: 'hidden'
         }
     const userStyle =
         prop.mode === "black"? 
-            {}
+            {borderRadius: '20px 5px', overflow: 'hidden'}
         : {
             color: "rgba(130, 7, 71,1)",
             borderColor: "rgba(130, 7, 71,0.7)",
+            borderRadius: '20px 5px', overflow: 'hidden'
         }
         const parent = useRef(null);
         const bottomRef = useRef(null);
+    const BtnClass = 'bg-transparent hover:bg-[rgba(255,255,255,0.3)] text-white-900 font-semibold py-2 px-4 border border-white-300 rounded focus:ring-4 focus:ring-[#FFFFFF] focus:ring-opacity-50'
+    const BtnStyle = {borderRadius: '5px 20px', overflow: 'hidden'}
 
         // animations
         useEffect(()=>{
@@ -50,7 +55,7 @@ function ChatBody(prop) {
                 return (
                   <div
                     key={i}
-                    className={`border-[#999999] break-words border-2 rounded-xl self-end py-3 px-3 max-w-[80%]
+                    className={`border-[#999999] break-words border-2 self-end py-3 px-3 max-w-[80%]
                     ${
                       message.sender === "ai"
                         ? "text-white backdrop-blur-lg dropshadow-md mr-auto"
@@ -65,18 +70,21 @@ function ChatBody(prop) {
                       {message.sender === "ai" ? (
                         <div className="flex items-stretch">
                           <div className="py-1 px-1">
-                            <button className="bg-transparent hover:bg-[rgba(255,255,255,0.3)] text-white-900 font-semibold py-2 px-4 border border-white-300 rounded focus:ring-4 focus:ring-[#FFFFFF] focus:ring-opacity-50"
+                            <button className={BtnClass}
+                            style={BtnStyle}
                             onClick={()=>{navigator.clipboard.writeText(message.message), alert("Copied ! ")}}>
                               Copy
                             </button>
                           </div>
                           <div className="py-1 px-1">
-                            <button className="bg-transparent hover:bg-[rgba(255,255,255,0.3)] text-white-900 font-semibold py-2 px-4 border border-white-300 rounded focus:ring-4 focus:ring-[#FFFFFF] focus:ring-opacity-50">
+                            <button className={BtnClass}
+                            style={BtnStyle}>
                               Feedback
                             </button>
                           </div>
                           <div className="py-1 px-1 justify-right">
-                            <button className={`bg-transparent hover:bg-[rgba(255,255,255,0.3)] text-white-900 font-semibold py-2 px-4 border border-white-300 rounded focus:ring-4 focus:ring-[#FFFFFF] focus:ring-opacity-50`}
+                            <button className={BtnClass}
+                            style={BtnStyle}
                             id="speak" onClick={()=>handleSpeak(message.message)}>
                               <img src="/assets/speak.png" className='h-6 w-6' alt="speak"/>
                             </button>

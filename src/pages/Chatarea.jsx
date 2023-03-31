@@ -59,14 +59,14 @@ function Chatarea(props) {
       </div>
 
       {/* body */}
-      <div className={`h-[90%] overflow-auto w-full max-w-4xl min-w-[20rem] py-8 px-4 self-center
+      <div className={`h-[90%] overflow-auto w-full max-w-7xl min-w-[20rem] py-8 px-4 self-center
      scrollbar-thumb-pink-100 scrollbar-track-transparent scrollbar-thin scrollbar-thumb-rounded-md`}>
 
         <ChatBody mode={props.mode} chat={chat}/>
       </div>
 
       {/* input */}
-      <div className='w-full max-w-4xl min-w-[20rem] self-center'>
+      <div className='w-full max-w-7xl min-w-[20rem] self-center'>
         <ChatInput mode={props.mode} sendMessage={sendMessage} loading={mutation.isLoading}/>
       </div>
     </div>
