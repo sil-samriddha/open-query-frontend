@@ -6,8 +6,7 @@ function ChatBody(prop) {
   const synth = window.speechSynthesis;
   const handleSpeak = (message) => {
     const utterance = new SpeechSynthesisUtterance(message);
-    utterance.voice = synth.getVoices()[2];
-    utterance.rate = 1.3;
+    utterance.voice = synth.getVoices()[1];
     if (synth.speaking) {
       synth.cancel();
     } else {
@@ -39,7 +38,6 @@ function ChatBody(prop) {
         // animations
         useEffect(()=>{
           parent.current && autoAnimate(parent.current);
-
         }, [parent])
 
         // scrolling
@@ -55,7 +53,7 @@ function ChatBody(prop) {
                 return (
                   <div
                     key={i}
-                    className={`border-[#999999] break-words border-2 self-end py-3 px-3 max-w-[80%]
+                    className={`border-[#999999] break-words border-2 self-end py-3 px-3 max-w-[80%] flex-wrap
                     ${
                       message.sender === "ai"
                         ? "text-white backdrop-blur-lg dropshadow-md mr-auto"
@@ -68,7 +66,7 @@ function ChatBody(prop) {
                     </pre>
                     <div>
                       {message.sender === "ai" ? (
-                        <div className="flex items-stretch">
+                        <div className="flex items-stretch flex-wrap justify-center sm:justify-start">
                           <div className="py-1 px-1">
                             <button className={BtnClass}
                             style={BtnStyle}
@@ -76,7 +74,7 @@ function ChatBody(prop) {
                               Copy
                             </button>
                           </div>
-                          <div className="py-1 px-1">
+                          <div className="py-1 px-1 hidden sm:inline">
                             <button className={BtnClass}
                             style={BtnStyle}>
                               Feedback

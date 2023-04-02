@@ -3,7 +3,7 @@ import React from 'react'
 function Feedback(props) {
   return (
     <div>
-        <section>
+        <section id="feedback">
   <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
       <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900"
       style={props.mode==="black"? {color: "white"} : {color: "rgba(130, 7, 71,1)"}}>Contact Us</h2>
@@ -22,7 +22,7 @@ function Feedback(props) {
               <label htmlFor="message" className="block mb-2 text-sm font-medium text-[#820747]-900">Your message</label>
               <textarea id="message" rows="6" className={`shadow-sm block w-full p-2.5 rounded border border-gray-900 text-gray-900 ${props.mode==="black"? "":"focus:outline-none focus:ring focus:ring-[#820747]"}`} placeholder="Leave a comment..."></textarea>
           </div>
-          <button type="submit" className={`bg-transparent hover:bg-${props.mode==="black"?"[rgba(255,255,255,0.3)]":"[#820747]"} font-semibold py-3 px-5 text-sm font-medium text-center ${props.mode==="black"?"":"hover:bg-[#820747] hover:text-zinc-50"} border py-2 px-4 hover:border-transparent rounded`}
+          <button type="submit" className={`bg-transparent hover:bg-${props.mode==="black"?"[rgba(255,255,255,0.3)]":"[#820747]"} py-3 px-5 text-sm font-medium text-center ${props.mode==="black"?"":"hover:bg-[#820747] hover:text-zinc-50"} border py-2 px-4 hover:border-transparent rounded`}
         style={props.mode==="black"?{borderColor : "white"}:{borderColor: "#820747"}}>Send message</button>
       </form>
   </div>

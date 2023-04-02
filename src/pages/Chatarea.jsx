@@ -1,19 +1,33 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/Chatarea.css'
 import ChatBody from '../components/ChatBody';
 import ChatInput from '../components/ChatInput';
 import { useMutation } from 'react-query';
 import { fetchResponse } from '../api';
+import { Link } from 'react-router-dom';
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 function Chatarea(props) {
-  const [chat, setChat] = useState([])
+  const [chat, setChat] = useState([]);
+  useEffect (()=>{
+    Aos.init({duration: 1000});
+  },[]);
+
+  // const synth = window.speechSynthesis;
+  // const handleSpeak = (message) => {
+  //   const utterance = new SpeechSynthesisUtterance(message);
+  //   utterance.voice = synth.getVoices()[1];
+  //   synth.speak(utterance);  
+  // };
 
   const mutation = useMutation({
     mutationFn: ()=>{
       return fetchResponse(chat)
     },
-    onSuccess: (data)=> 
-    setChat((prev)=>[...prev, {sender: 'ai', message: data.message.replace(/^\n\n/," ")}])
+    onSuccess: (data)=>{
+        // handleSpeak(data.message);        
+        setChat((prev)=>[...prev, {sender: 'ai', message: data.message.replace(/^\n\n/,"")}])}
 
   })
 
@@ -35,17 +49,19 @@ function Chatarea(props) {
       }
     >
       {/* gradients */}
-      <div className="gradient-01 z-0 absolute"></div>
-      <div className="gradient-02 z-0 absolute"></div>
-      <div className="gradient-03 z-0 absolute"></div>
+      <div data-aos="fade-in-left" className="gradient-01 z-0 absolute"></div>
+      <div data-aos="fade-in-right" className="gradient-02 z-0 absolute"></div>
+      <div data-aos="fade-in-down" className="gradient-03 z-0 absolute"></div>
 
       {/* header */}
-      <div className="grid grid-rows-3 grid-flow-col gap-4 align-middle">
+      <div data-aos="fade-down" className="grid grid-rows-3 grid-flow-col gap-4 align-middle">
         <div className="row-start-1 row-span-2 w-30 text-left"
         style={props.mode==='black'?{}:{color: "rgba(130, 7, 71,1)"}}>
+          <Link to="/">
         <button className='w-15'>
-          <img src={props.mode==="black"?"/assets/home_white.png":"/assets/home_pink.png"} alt="" className='w-10 h-10' />
+              <img data-aos="fade-left" src={props.mode==="black"?"/assets/home_white.png":"/assets/home_pink.png"} alt="" className='w-10 h-10 hover:scale-125' />
           </button>
+          </Link>
         </div>
         <div className="row-end-3 row-span-2 font-bold text-2xl text-center mb-3">
           Open Query
@@ -53,7 +69,7 @@ function Chatarea(props) {
         <div className="row-start-1 row-end-4 text-right"
         style={props.mode==='black'?{}:{color: "rgba(130, 7, 71,1)"}}>
           <button className='w-15' onClick={props.toggle}>
-          <img src={props.mode==="black"?"/assets/light_mode.png":"/assets/dark_mode.png"} alt="" className='w-10 h-10' />
+          <img  data-aos="fade-right" src={props.mode==="black"?"/assets/light_mode.png":"/assets/dark_mode.png"} alt="" className='w-10 h-10' />
           </button>
         </div>
       </div>

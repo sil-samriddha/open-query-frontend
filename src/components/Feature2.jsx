@@ -1,5 +1,4 @@
 import React from 'react'
-import Btn from './Btn';
 import FeatureContent from './FeatureContent';
 
 
@@ -7,6 +6,7 @@ function Feature2(props) {
   return (
     <div>
       <section className="rounded-xl my-5"
+      id="features"
       style={props.mode==="black"?{backgroundColor: "rgba(152, 86, 141, 0.4)", border: "1px solid white"}:{backgroundColor: "rgba(171, 73, 141, 0.15)"}}>
         <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-10 md:grid md:grid-cols-2 sm:py-8 lg:px-10">
           <FeatureContent mode={props.mode} 

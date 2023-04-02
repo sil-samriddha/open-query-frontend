@@ -1,15 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const ChatInput = (props) => {
   const [Speak, setSpeak]= useState(false);
   var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
   var recognition = new SpeechRecognition();
+  useEffect (()=>{
+    Aos.init({duration: 1000, offset: -100});
+  },[]);
   
   const handleSpeak = () => {
     if(Speak){
       recognition.stop();
       setSpeak(false);
+      if(value!== ""){
+        setTimeout(props.sendMessage({ sender: "user", message: value }), 1200);
+        setTimeout(setValue(""),)
+      }
     }else{
       recognition.start();
       setSpeak(true);
@@ -26,10 +35,10 @@ const ChatInput = (props) => {
   };
   recognition.onresult = function(event) {
     var transcript = event.results[0][0].transcript;
-    setValue(transcript);
+    setValue(transcript.toString());
   };
   return (
-    <div
+    <div data-aos="fade-zoom-up"
       className={`w-full max-h-40 rounded-lg px-4 py-4 overflow-hidden relative`}
       style={
         props.mode === "black"
@@ -55,7 +64,7 @@ const ChatInput = (props) => {
         </>
       ) : (
         <>
-          <img
+          <img data-aos="zoom-in-left" data-aos-duration="500"
             src={
               Speak ?
                props.mode === "black" ?
@@ -81,7 +90,7 @@ const ChatInput = (props) => {
             maxRows="5"
             onChange={(e) => setValue(e.target.value)}
           />
-          <img
+          <img data-aos= "zoom-in-right" data-aos-duration="500"
             onClick={handleSubmit}
             src={
               props.mode === "black"
