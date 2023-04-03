@@ -57,7 +57,7 @@ function Feedback(props) {
               <div data-aos="fade-right" className="container w-full px-4">
                 <div className="flex flex-wrap justify-center">
                   <div className="w-full lg:w-6/12 px-4">
-                    <div className={`relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-${props.mode==="black"?"white":"pink-50"}`}>
+                    <div className={`relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg ${props.mode==="black"?"bg-white":"bg-pink-50"}`}>
                       <div className="flex-auto p-5 lg:p-10">
                         <h4
                           className={`text-2xl mb-4 font-semibold ${

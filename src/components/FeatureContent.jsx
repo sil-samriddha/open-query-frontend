@@ -10,7 +10,7 @@ function FeatureContent(props) {
   return (
     <>
         <img data-aos="zoom-in"
-            className="w-full"
+            className="w-[80%]"
             src={props.imgLink}
             alt=""
           />

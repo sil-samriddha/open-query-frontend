@@ -6,7 +6,7 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 
 function Navbar(props) {
-  const BigNav= 'cursor-pointer text-[16px] m-10 rounded-xl px-4 py-2 hover:font-extrabold hover:my-9 hover:mx-[39px] hover:border mr-10}'
+  const BigNav= 'cursor-pointer text-[16px] m-10 mx-5 rounded-xl px-4 py-2 hover:font-extrabold hover:my-9 hover:mx-[19px] hover:border mr-10}'
   const BigNavStyle= props.mode==="black"?{backgroundColor: "rgba(169, 87, 217, 0.3)", borderColor: "white"}:{backgroundColor: "rgba(222, 91, 159,0.3)", borderColor: "rgb(222, 91, 159)"}
   const TinyNav= 'font-medium cursor-pointer text-[16px] m-10 mb-0'
   useEffect (()=>{
@@ -15,9 +15,9 @@ function Navbar(props) {
   const [menuToggle, setMenuToggle] = useState(false);
   return (
     <div id="home">
-      <nav className={`w-full flex py-2 justify-between items-center navbar`}>
-        <img data-aos="zoom-in" src="./assets/icon.png" alt="Open Query" className="h-[60px]" />{" "}
-        <p data-aos="zoom-in" className="text-[20px]">OpenQuery</p>
+      <nav className={`w-full flex py-2 justify-between items-center navbar mx-5`}>
+        <img data-aos="zoom-in" src="./assets/icon.png" alt="Open Query" className="cursor-pointer h-[60px]" />{" "}
+        <p data-aos="zoom-in" className="cursor-pointer text-[20px]">OpenQuery</p>
 {/* Navbar for Large Screen */}
         <ul data-aos="fade-down"
           className={`list-none sm:flex hidden justify-end items-center flex-1`}

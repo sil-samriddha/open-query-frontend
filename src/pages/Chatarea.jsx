@@ -27,7 +27,7 @@ function Chatarea(props) {
     },
     onSuccess: (data)=>{
         // handleSpeak(data.message);        
-        setChat((prev)=>[...prev, {sender: 'ai', message: data.message.replace(/^\n\n/,"")}])}
+        setChat((prev)=>[...prev, {sender: 'ai', message: data.message.replace("`"," ")}])}
 
   })
 

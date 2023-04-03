@@ -1,3 +1,4 @@
+// text-davinci-003 model
 import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
@@ -31,17 +32,18 @@ app.get("/", (req, res) => {
 })
 
 
-//post rout
+//post route
 app.post('/', async (req, res)=>{
-    const {message} = req.body;
+    const {message} = req.body
+
     try{
-        const response = await openai.createChatCompletion({
-            model: "gpt-3.5-turbo",
-            messages: [
-                {role: "user", content: `${message}`},
-            ]
+        const response = await openai.createCompletion({
+            model: "text-davinci-003",
+            prompt: `${message}`,
+            max_tokens: 512,
+            temperature: .5
         })
-        res.json({message: response.data.choices[0].message.content})
+        res.json({message: response.data.choices[0].text})
 
     }catch(e){
         console.log(e)
