@@ -30,7 +30,7 @@ function HomePage(props) {
         </div>
         <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
             <div className={`${styles.boxWidth}`}>
-                <h2 data-aos="fade-in" data-aos-anchor-placement="center-center" className={styles.heading2} align="center">
+                <h2 id="features" data-aos="fade-in" data-aos-anchor-placement="center-center" className={styles.heading2} align="center">
                 What makes Open Query the best live chat software?
                 </h2>
                 <div data-aos="fade-up">

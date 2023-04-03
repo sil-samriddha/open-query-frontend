@@ -1,34 +1,154 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function Feedback(props) {
+	// Current Date
+	let currentDate = new Date();
+
+	const [email, setEmail] = useState("");
+	const [msg, setMsg] = useState("");
+	const handleSubmit = (e) =>{
+		e.preventDefault();
+		const data = {
+			Email: email,
+			Feedback: msg,
+			DateTime: String(currentDate)
+		}
+		axios.post("https://sheet.best/api/sheets/2c70e2b7-85f1-4405-a6c5-deeabfd5d5ef",data).then((Response)=>{
+			console.log(Response);
+			alert("Submitted ! ")
+		})
+
+		setEmail("");
+		setMsg("");
+	}
+  useEffect(() => {
+    Aos.init({ duration: 1000, offset: 200 });
+  }, []);
   return (
     <div>
-        <section id="feedback">
-  <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-      <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900"
-      style={props.mode==="black"? {color: "white"} : {color: "rgba(130, 7, 71,1)"}}>Contact Us</h2>
-      <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Let us know how can we help you.</p>
-      <form action="#" className="space-y-8">
-          <div>
-              <label htmlFor="email" className="block mb-2 text-sm font-medium text-[#820747]-900 ">Your email</label>
-              <input type="email" id="email" className={`shadow-sm block w-full p-2.5 rounded border border-gray-900 text-gray-900 ${props.mode==="black"? "":"focus:outline-none focus:ring focus:ring-[#820747]"}`} placeholder="name@domain.com"
-              required/>
+      <section id="feedback">
+        <div>
+          <div className="container mx-auto flex flex-col md:flex-row my-6 md:my-24">
+            <div data-aos="fade-left"
+              className="flex flex-col w-full lg:w-1/3 p-8"
+              style={
+                props.mode === "black"
+                  ? {}
+                  : {
+                      backgroundImage:
+                        "linear-gradient(to right, #861550 0%, #de5b9f 74%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }
+              }
+            >
+              <p className="text-3xl md:text-5xl my-4 leading-relaxed font-bold md:leading-snug">
+                Leave us a feedback!
+              </p>
+              <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                Would you please take a moment to leave us some feedback? It
+                should only take a minute.
+              </p>
+            </div>
+            <div className="flex flex-col w-full lg:w-2/3 justify-center">
+              <div data-aos="fade-right" className="container w-full px-4">
+                <div className="flex flex-wrap justify-center">
+                  <div className="w-full lg:w-6/12 px-4">
+                    <div className={`relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-${props.mode==="black"?"white":"pink-50"}`}>
+                      <div className="flex-auto p-5 lg:p-10">
+                        <h4
+                          className={`text-2xl mb-4 font-semibold ${
+                            props.mode === "black" ? "text-black" : ""
+                          }`}
+                        >
+                          Have a suggestion?
+                        </h4>
+                        <form id="feedbackForm" onSubmit={handleSubmit}>
+                          <div className="relative w-full mb-3">
+                            <label
+                              className={`block uppercase text-xs font-bold mb-2 ${
+                                props.mode === "black" ? "text-black" : ""
+                              }`}
+                              htmlFor="email"
+                            >
+                              Email
+                            </label>
+                            <input
+                              type="email"
+                              name="email"
+                              id="email"
+                              className={`border-0 px-3 py-3 ${
+                                props.mode === "black"
+                                  ? "bg-gray-300 text-black"
+                                  : "bg-white text-[#861550]"
+                              } rounded text-sm shadow w-full
+                      placeholder-gray-400  outline-none`}
+                              placeholder="name@domain.com"
+							  onChange={(e)=>setEmail(e.target.value)}
+							  value={email}
+                              required
+                            />
+                          </div>
+                          <div className="relative w-full mb-3">
+                            <label
+                              className={`block uppercase text-xs font-bold mb-2 ${
+                                props.mode === "black" ? "text-black" : ""
+                              }`}
+                              htmlFor="message"
+                            >
+                              Message
+                            </label>
+                            <textarea
+                              name="feedback"
+                              id="feedback"
+                              rows="4"
+                              cols="80"
+                              className={`border-0 px-3 py-3 ${
+                                props.mode === "black"
+                                  ? "bg-gray-300  text-black"
+                                  : "bg-white text-[#861550]"
+                              } placeholder-gray-400 rounded text-sm shadow focus:outline-none w-full resize-none`}
+                              placeholder="We'd love to hear your feedback"
+							  onChange={(e)=>setMsg(e.target.value)}
+							  value={msg}
+                              required
+                            />
+                          </div>
+                          <div className="text-center hover:font-bold mt-6">
+                            <button
+                              id="feedbackBtn"
+                              className="text-white text-center mx-auto text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                              type="submit"
+                              style={
+                                props.mode === "black"
+                                  ? {
+                                      backgroundImage:
+                                        "linear-gradient(to right,  #a957d9, #7e2a64)",
+                                    }
+                                  : {
+                                      backgroundImage:
+                                        "linear-gradient(to right, #861550 0%, #de5b9f 74%)",
+                                    }
+                              }
+                            >
+                              Submit
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-              <label htmlFor="subject" className="block mb-2 text-sm font-medium text-[#820747]-900">Subject</label>
-              <input type="text" id="subject" className={`shadow-sm block w-full p-2.5 rounded border border-gray-900 text-gray-900 ${props.mode==="black"? "":"focus:outline-none focus:ring focus:ring-[#820747]"}`} placeholder="Let us know how we can help you" required/>
-          </div>
-          <div className="sm:col-span-2">
-              <label htmlFor="message" className="block mb-2 text-sm font-medium text-[#820747]-900">Your message</label>
-              <textarea id="message" rows="6" className={`shadow-sm block w-full p-2.5 rounded border border-gray-900 text-gray-900 ${props.mode==="black"? "":"focus:outline-none focus:ring focus:ring-[#820747]"}`} placeholder="Leave a comment..."></textarea>
-          </div>
-          <button type="submit" className={`bg-transparent hover:bg-${props.mode==="black"?"[rgba(255,255,255,0.3)]":"[#820747]"} py-3 px-5 text-sm font-medium text-center ${props.mode==="black"?"":"hover:bg-[#820747] hover:text-zinc-50"} border py-2 px-4 hover:border-transparent rounded`}
-        style={props.mode==="black"?{borderColor : "white"}:{borderColor: "#820747"}}>Send message</button>
-      </form>
-  </div>
-</section>
+        </div>
+      </section>
     </div>
-  )
+  );
 }
 
-export default Feedback
+export default Feedback;

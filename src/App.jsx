@@ -4,6 +4,7 @@ import { useState } from "react";
 import { QueryClientProvider, QueryClient } from "react-query";
 import HomePage from "./pages/HomePage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 const queryClient = new QueryClient();
 
 function App() {

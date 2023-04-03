@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import autoAnimate from '@formkit/auto-animate';
+import { Link } from 'react-router-dom';
 
 function ChatBody(prop) {
   // Speech synthesis
@@ -75,10 +76,13 @@ function ChatBody(prop) {
                             </button>
                           </div>
                           <div className="py-1 px-1 hidden sm:inline">
-                            <button className={BtnClass}
+                            <Link to='/'>
+                            <button onClick={()=>setTimeout(()=>window.window.scrollTo({top: 4400, behavior: "smooth",}),1000)} 
+                            className={BtnClass}
                             style={BtnStyle}>
                               Feedback
                             </button>
+                            </Link>
                           </div>
                           <div className="py-1 px-1 justify-right">
                             <button className={BtnClass}

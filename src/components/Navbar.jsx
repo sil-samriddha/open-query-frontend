@@ -6,48 +6,50 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 
 function Navbar(props) {
+  const BigNav= 'cursor-pointer text-[16px] m-10 rounded-xl px-4 py-2 hover:font-extrabold hover:my-9 hover:mx-[39px] hover:border mr-10}'
+  const BigNavStyle= props.mode==="black"?{backgroundColor: "rgba(169, 87, 217, 0.3)", borderColor: "white"}:{backgroundColor: "rgba(222, 91, 159,0.3)", borderColor: "rgb(222, 91, 159)"}
+  const TinyNav= 'font-medium cursor-pointer text-[16px] m-10 mb-0'
   useEffect (()=>{
     Aos.init({duration: 1000, offset: 200});
   },[]);
   const [menuToggle, setMenuToggle] = useState(false);
   return (
-    <div>
+    <div id="home">
       <nav className={`w-full flex py-2 justify-between items-center navbar`}>
-        <img data-aos="zoom-in" src="./assets/icon.png" alt="Open Query" className="h-[40px]" />{" "}
-        <p data-aos="zoom-in">OpenQuery</p>
-        
+        <img data-aos="zoom-in" src="./assets/icon.png" alt="Open Query" className="h-[60px]" />{" "}
+        <p data-aos="zoom-in" className="text-[20px]">OpenQuery</p>
 {/* Navbar for Large Screen */}
         <ul data-aos="fade-down"
           className={`list-none sm:flex hidden justify-end items-center flex-1`}
         >
-          <Link to="/">
+          <LinkScroll to="home">
             <li
-              className={`cursor-pointer text-[16px] m-10 rounded-xl px-4 py-2 hover:font-extrabold hover:my-9 hover:mx-[39px] hover:border mr-10}`}
-              style={props.mode==="black"?{backgroundColor: "rgba(169, 87, 217, 0.3)", borderColor: "white"}:{backgroundColor: "rgba(222, 91, 159,0.3)", borderColor: "rgb(222, 91, 159)"}}
+              className={BigNav}
+              style={BigNavStyle}
             >
               Home
             </li>
-          </Link>
+          </LinkScroll>
           <Link to="/app">
             <li
-              className={`cursor-pointer text-[16px] m-10 rounded-xl px-4 py-2 hover:font-extrabold hover:my-9 hover:mx-[39px] hover:border mr-10}`}
-              style={props.mode==="black"?{backgroundColor: "rgba(169, 87, 217, 0.3)", borderColor: "white"}:{backgroundColor: "rgba(222, 91, 159,0.3)", borderColor: "rgb(222, 91, 159)"}}
+              className={BigNav}
+              style={BigNavStyle}
             >
               Get Started
             </li>
           </Link>
           <LinkScroll to="features">
             <li
-              className={`cursor-pointer text-[16px] m-10 rounded-xl px-4 py-2 hover:font-extrabold hover:my-9 hover:mx-[39px] hover:border mr-10}`}
-              style={props.mode==="black"?{backgroundColor: "rgba(169, 87, 217, 0.3)", borderColor: "white"}:{backgroundColor: "rgba(222, 91, 159,0.3)", borderColor: "rgb(222, 91, 159)"}}
+              className={BigNav}
+              style={BigNavStyle}
             >
               Features
             </li>
           </LinkScroll>
-          <LinkScroll to="feedback">
+          <LinkScroll to="feedback" offset={-200}>
             <li
-              className={`cursor-pointer text-[16px] m-10 rounded-xl px-4 py-2 hover:font-extrabold hover:my-9 hover:mx-[39px] hover:border mr-10}`}
-              style={props.mode==="black"?{backgroundColor: "rgba(169, 87, 217, 0.3)", borderColor: "white"}:{backgroundColor: "rgba(222, 91, 159,0.3)", borderColor: "rgb(222, 91, 159)"}}
+              className={BigNav}
+              style={BigNavStyle}
             >
               Feedback
             </li>
@@ -119,25 +121,25 @@ function Navbar(props) {
               </li>
               <Link to={`/`}>
                 <li
-                  className={`font-medium cursor-pointer text-[16px] m-10 mb-0`}
+                  className={TinyNav}
                   onClick={()=> setMenuToggle((prev) => !prev)}
                 > Home </li>
               </Link>
               <Link to={`/app`}>
                 <li
-                  className={`font-medium cursor-pointer text-[16px] m-10 mb-0`}
+                  className={TinyNav}
                   onClick={()=> setMenuToggle((prev) => !prev)}
                 > Get Started </li>
               </Link>
               <LinkScroll to={`features`}>
                 <li
-                  className={`font-medium cursor-pointer text-[16px] m-10 mb-0`}
+                  className={TinyNav}
                   onClick={()=> setMenuToggle((prev) => !prev)}
                 > Features </li>
               </LinkScroll>
               <LinkScroll to={`feedback`}>
                 <li
-                  className={`font-medium cursor-pointer text-[16px] m-10 mb-0`}
+                  className={TinyNav}
                   onClick={()=> setMenuToggle((prev) => !prev)}
                 > Feedback </li>
               </LinkScroll>

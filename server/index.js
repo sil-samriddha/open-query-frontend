@@ -45,6 +45,6 @@ app.post('/', async (req, res)=>{
 
     }catch(e){
         console.log(e)
-        res.send(e).status(400)
+        res.json({message: "\n\nWe apologize for the inconvenience, but our server is currently experiencing a high volume of traffic, which may cause delays in accessing our website or services. Our team is actively working to resolve this issue and improve server performance to provide you with the best possible experience.\n"+ e})
     }
 })

@@ -21,13 +21,13 @@ function MainScreen(props) {
                   </p>
                  </div>
                  <div className='flex flex-row justify-between items-center w-full'>
-                  <h1 data-aos="fade-right" className='flex-1 font-semibold ss:text-[72px] text-[52px] ss:leading-[100px] leading-[75px]'>
+                  <span data-aos="fade-right" className='flex-1 font-semibold ss:text-[72px] text-[52px] ss:leading-[100px] leading-[75px]'>
                     <h1
                     style={props.mode==="black"?{backgroundImage: "linear-gradient(to right,  #a957d9, #d998a0, #e6bcfe, #7e2a64)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}:
                     {backgroundImage: "linear-gradient(to right, #861657 0%, #de5b9f 74%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Solve Queries</h1>
                     
                     <span className="ss:text-[50px] text-[42px]" style={props.mode==="black"?{color: "rgba(255,255,255,1)"}:{color: "rgba(176, 74, 144, 0.5)"}}>through</span>
-                  </h1>
+                  </span>
                   <div className='ss:flex md:mr-4 m-0'>
                     <div className={`${styles.flexCenter} w-[160px] h-[160px] rounded-full`}>
                       <div data-aos="zoom-in" className={`${styles.flexCenter} flex-col rounded-full`}>
@@ -48,9 +48,9 @@ function MainScreen(props) {
             </div>
             <div>
               <img data-aos="fade-left" src="/assets/Main_page.png" alt="" className=' w-[100%] h-[100%] relative z-[5]' />
-              <div className='absolute z-[0] w-[40%] h-[35%] top-[180px] rounded-full'
+              <div data-aos="fade-in" data-aos-duration="2000" className='absolute z-[0] w-[40%] h-[35%] top-[180px] rounded-full'
               style={{background: "#ff00ea", filter: props.mode==="black"?"blur(160px)":"blur(360px)", pointerEvents: "none"}}/>
-              <div className='absolute z-[0] w-[40%] h-[35%] bottom-[10px] rounded-full'
+              <div data-aos="fade-in" data-aos-duration="2000" className='absolute z-[0] w-[40%] h-[35%] bottom-[10px] rounded-full'
               style={{background: "#7aebfb", filter: props.mode==="black"?"blur(150px)":"blur(250px)" , pointerEvents: "none"}}/>
             
             </div>
