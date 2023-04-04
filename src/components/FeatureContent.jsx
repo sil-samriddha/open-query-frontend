@@ -23,7 +23,7 @@ function FeatureContent(props) {
             {props.define}
             </p>
             <a
-              href="#"
+              href={props.link} target='_blank'
               className="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm text-center"
             >
                 <Btn mode={props.mode} text="Learn more"/>

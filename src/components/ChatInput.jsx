@@ -80,7 +80,7 @@ const ChatInput = (props) => {
             onKeyDown={(e) => {
               e.keyCode === 13 && e.shiftKey === false && handleSubmit();
             }}
-            className="border-0 ml-9 bg-transparent outline-none w-11/12 overflow-auto resize-none
+            className="border-0 ml-9 bg-transparent outline-none lg:w-[95%] sm:w-[90%] w-[77%] overflow-auto resize-none
        scrollbar-thumb-pink-100 scrollbar-track-transparent scrollbar-thin scrollbar-thumb-rounded-md"
             style={
               props.mode === "black" ? {} : { color: "rgba(130, 7, 71,1)" }

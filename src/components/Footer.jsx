@@ -22,15 +22,21 @@ function Footer(props) {
           We'd love to hear from you
         </h5>
         <div className="flex mt-6 lg:mb-0 mb-6">
+          <a href="https://www.linkedin.com/in/samriddha-sil" target="_blank">
           <button className="flex flex-initial bg-white shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
             <img src="/assets/linkedin.png" className="align-center justify-center w-[50%] h-[50%]" alt="" />
             </button>
+          </a>
+          <a href="https://github.com/sil-samriddha" target="_blank">
             <button className="flex flex-initial bg-white shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
             <img src="/assets/github.png" className="align-center justify-center w-[50%] h-[50%]" alt="" />
             </button>
+          </a>
+          <a href="mailto: samriddha.sil297@gmail.com" target="_blank">
             <button className="flex flex-initial bg-white shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
             <img src="/assets/gmail.png" className="align-center justify-center w-[50%] h-[50%]" alt="" />
             </button>
+          </a>
         </div>
       </div>
       <div data-aos="fade-right" className="w-full lg:w-6/12 px-4">
