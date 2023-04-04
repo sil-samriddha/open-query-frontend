@@ -15,7 +15,7 @@ function Navbar(props) {
   const [menuToggle, setMenuToggle] = useState(false);
   return (
     <div id="home">
-      <nav className={`w-full flex py-2 justify-between items-center navbar mx-5`}>
+      <nav className={`w-full flex py-2 justify-between items-center navbar sm:mx-5 mx-2`}>
         <img data-aos="zoom-in" src="./assets/icon.png" alt="Open Query" className="cursor-pointer h-[60px]" />{" "}
         <p data-aos="zoom-in" className="cursor-pointer text-[20px]">OpenQuery</p>
 {/* Navbar for Large Screen */}

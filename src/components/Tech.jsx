@@ -10,7 +10,7 @@ function Tech() {
   return (
     <div>
         <section>
-    <div className="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
+    <div className="py-8 lg:py-16 mx-auto max-w-screen-xl sm:px-4 px-2">
         <h2 className="mb-8 lg:mb-16 text-3xl font-extrabold tracking-tight leading-tight text-center md:text-4xl">Technologies & Dependencies</h2>
         <div className="grid grid-cols-2 gap-8 sm:gap-12 md:grid-cols-3 lg:grid-cols-6 align-center">
             <a href="https://react.dev/" target="_blank" className={linkClass}>
