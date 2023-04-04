@@ -8,12 +8,14 @@ function FeatureContent(props) {
     Aos.init({duration: 2000});
   },[]);
   return (
-    <>
+    <><div className='flex justify-center'>
+
         <img data-aos="zoom-in"
-            className="w-[80%] ml-6"
+            className="w-[80%]"
             src={props.imgLink}
             alt=""
           />
+    </div>
           <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className="mt-4 md:mt-0">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold"
             style={props.mode==="black"?{backgroundImage: "linear-gradient(to right,  #a957d9, #7e2a64)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}:{backgroundImage: "linear-gradient(to right, #861550 0%, #de5b9f 74%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>
