@@ -36,15 +36,16 @@ function Chatarea(props) {
     await Promise.resolve(setChat((prev)=>[...prev, message]))
     mutation.mutate();
   }
+  let height = window.innerHeight;
   return (
     <div
-      className={`h-[95vh] sm:h-screen py-6 relative sm:px-16 px-5 text-${
+      className={`sm:h-screen py-6 relative sm:px-16 px-5 text-${
         props.mode === "black" ? "white" : "[#1A232E]"
       } overflow-hidden flex flex-col justify-between align-middle`}
       style={
         props.mode === "black"
-          ? { background: "#1A232E"}
-          : { background: "white" }
+          ? { background: "#1A232E", height: `${height}px`}
+          : { background: "white", height: `${height}px` }
       }
     >
       {/* gradients */}
