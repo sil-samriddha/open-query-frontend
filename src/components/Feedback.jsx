@@ -25,7 +25,7 @@ function Feedback(props) {
 		setMsg("");
 	}
   useEffect(() => {
-    Aos.init({ duration: 1000, offset: 200 });
+    Aos.init({ duration: 700, offset: 200 });
   }, []);
   return (
     <div>

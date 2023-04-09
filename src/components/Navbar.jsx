@@ -10,7 +10,7 @@ function Navbar(props) {
   const BigNavStyle= props.mode==="black"?{backgroundColor: "rgba(169, 87, 217, 0.3)", borderColor: "white"}:{backgroundColor: "rgba(222, 91, 159,0.3)", borderColor: "rgb(222, 91, 159)"}
   const TinyNav= 'font-medium cursor-pointer text-[16px] m-10 mb-0'
   useEffect (()=>{
-    Aos.init({duration: 1000, offset: 200});
+    Aos.init({duration: 700, offset: 200});
   },[]);
   const [menuToggle, setMenuToggle] = useState(false);
   return (

@@ -10,7 +10,7 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 function HomePage(props) {
     useEffect (()=>{
-        Aos.init({duration: 1000});
+        Aos.init({duration: 700});
     },[]);
   return (
     <div className="w-full overflow-hidden"

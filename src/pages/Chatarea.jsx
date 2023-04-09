@@ -11,7 +11,7 @@ import 'aos/dist/aos.css'
 function Chatarea(props) {
   const [chat, setChat] = useState([]);
   useEffect (()=>{
-    Aos.init({duration: 1000});
+    Aos.init({duration: 700});
   },[]);
 
   // const synth = window.speechSynthesis;

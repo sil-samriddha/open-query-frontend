@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Link as Scroll } from "react-scroll";
 function Footer(props) {
   useEffect (()=>{
-    Aos.init({duration: 1000});
+    Aos.init({duration: 700});
   },[]);
 
   const linkClass = `cursor-pointer font-semibold block pb-2 text-sm  ${props.mode==="black"? "hover:text-[#E0B0FF]":"hover:text-[#FFBFBF]"}`
@@ -39,13 +39,18 @@ function Footer(props) {
           </a>
         </div>
       </div>
-      <div data-aos="fade-right" className="w-full lg:w-6/12 px-4">
+      <div data-aos="fade-right" className="w-full lg:w-6/12 px-0 sm:px-4">
         <div className="flex flex-wrap items-top mb-6">
           <div className="w-full lg:w-4/12 px-4 ml-auto text-2xl">
             Thank you for visiting
           </div>
-          <div className="w-full lg:w-4/12 px-4">
-            <span className="block uppercase mt-5 sm:mt-0 text-sm font-semibold mb-2">Navigation Links</span>
+          <div className="w-full lg:w-4/12 pt-2 px-5 ml-auto block sm:hidden text-lg">
+            <Scroll to="home">
+              Back to the top
+            </Scroll>
+          </div>
+          <div className="w-full lg:w-4/12 px-4 hidden sm:inline">
+            <span className="block uppercase mt-5 sm:mt-0 text-sm font-semibold mb-2 ">Navigation Links</span>
             <ul className={`list-unstyled hover:font-bold`}>
               <li>
                 <Scroll className={linkClass} to="home">Home</Scroll>

@@ -8,7 +8,7 @@ const ChatInput = (props) => {
   var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
   var recognition = new SpeechRecognition();
   useEffect (()=>{
-    Aos.init({duration: 1000, offset: -100});
+    Aos.init({duration: 700, offset: -100});
   },[]);
   
   const handleSpeak = () => {

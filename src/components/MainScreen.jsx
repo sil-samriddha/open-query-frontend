@@ -6,7 +6,7 @@ import 'aos/dist/aos.css'
 
 function MainScreen(props) {
   useEffect (()=>{
-    Aos.init({duration: 1000});
+    Aos.init({duration: 700});
   },[]);
   const boldTop = props.mode==="black"?{color: "#e6bcfe", fontWeight: "bolder"}:{color: "#763261", fontWeight: "bolder"}
   const nomTop = props.mode==="black"?{color: "rgba(255,255,255,0.7)"}:{color: "rgba(171, 73, 141, 0.7)"}
@@ -51,9 +51,9 @@ function MainScreen(props) {
             </div>
             <div>
               <img data-aos="fade-left" src="/assets/Main_page.png" alt="" className=' w-[100%] h-[100%] relative z-[5]' />
-              <div data-aos="fade-in" data-aos-duration="2000" className='absolute z-[0] w-[40%] h-[35%] top-[180px] rounded-full'
+              <div data-aos="fade-in" className='absolute z-[0] w-[40%] h-[35%] top-[180px] rounded-full'
               style={{background: "#ff00ea", filter: props.mode==="black"?"blur(160px)":"blur(360px)", pointerEvents: "none"}}/>
-              <div data-aos="fade-in" data-aos-duration="2000" className='absolute z-[0] w-[40%] h-[35%] bottom-[10px] rounded-full'
+              <div data-aos="fade-in" className='absolute z-[0] w-[40%] h-[35%] bottom-[10px] rounded-full'
               style={{background: "#7aebfb", filter: props.mode==="black"?"blur(150px)":"blur(250px)" , pointerEvents: "none"}}/>
             
             </div>

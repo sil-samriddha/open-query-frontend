@@ -5,7 +5,7 @@ import 'aos/dist/aos.css'
 function Tech() {
     const linkClass='flex justify-center items-center w-[120px] sm:mx-10 mx-5'
     useEffect (()=>{
-        Aos.init({duration: 1000});
+        Aos.init({duration: 700});
       },[]);
   return (
     <div>

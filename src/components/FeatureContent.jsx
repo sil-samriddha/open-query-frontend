@@ -5,7 +5,7 @@ import 'aos/dist/aos.css'
 
 function FeatureContent(props) {
   useEffect (()=>{
-    Aos.init({duration: 2000});
+    Aos.init({duration: 700});
   },[]);
   return (
     <><div className='flex justify-center'>
