@@ -110,7 +110,8 @@ function Feedback(props) {
                                 props.mode === "black"
                                   ? "bg-gray-300  text-black"
                                   : "bg-white text-[#861550]"
-                              } placeholder-gray-400 rounded text-sm shadow focus:outline-none w-full resize-none`}
+                              } placeholder-gray-400 rounded text-sm shadow focus:outline-none w-full resize-none
+                              ${props.mode === "black"? "scrollbar-thumb-stone-50" : "scrollbar-thumb-pink-100"} scrollbar-track-transparent scrollbar-thin scrollbar-thumb-rounded-md`}
                               placeholder="We'd love to hear your feedback"
 							  onChange={(e)=>setMsg(e.target.value)}
 							  value={msg}
