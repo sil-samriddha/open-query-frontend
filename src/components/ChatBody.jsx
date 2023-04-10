@@ -36,7 +36,7 @@ function ChatBody(prop) {
         }
         const parent = useRef(null);
         const bottomRef = useRef(null);
-    const BtnClass = 'bg-transparent hover:bg-[rgba(255,255,255,0.3)] text-white-900 font-semibold py-2 px-4 border border-white-300 rounded focus:ring-4 focus:ring-[#FFFFFF] focus:ring-opacity-50'
+    const BtnClass = 'bg-transparent hover:bg-[rgba(255,255,255,0.3)] font-semibold py-2 px-4 border border-white-300 rounded focus:ring-4 focus:ring-[#FFFFFF] focus:ring-opacity-50'
     const BtnStyle = {borderRadius: '5px 20px', overflow: 'hidden'}
 
         // animations
@@ -96,13 +96,13 @@ function ChatBody(prop) {
                     </pre>
                     <div>
                       {message.sender === "ai" ? (
-                        <div className="flex items-stretch flex-wrap justify-center sm:justify-start">
+                        <div className="flex items-stretch flex-wrap justify-center sm:justify-start pt-2">
                           <div className="py-1 px-1">
                           <CopyToClipboard text={message.message}>
                             <button className={BtnClass}
                             style={BtnStyle}
                             onClick={()=>popup("Copied !")}>
-                              Copy
+                              <img src="/assets/copyIcon.png" className='h-6 w-6' alt="copy"/>
                             </button>
                           </CopyToClipboard>
                           </div>
@@ -111,7 +111,7 @@ function ChatBody(prop) {
                             <button onClick={()=>setTimeout(()=>window.window.scrollTo({top: 3800, behavior: "smooth",}),800)} 
                             className={BtnClass}
                             style={BtnStyle}>
-                              Feedback
+                              <img src="/assets/feedbackicon.png" className='h-6 w-6' alt="feedback"/>
                             </button>
                             </Link>
                           </div>
