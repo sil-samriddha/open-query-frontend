@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import autoAnimate from '@formkit/auto-animate';
 import { Link } from 'react-router-dom';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ChatBody(prop) {
   // Speech synthesis
@@ -47,6 +49,32 @@ function ChatBody(prop) {
           bottomRef.current?.scrollIntoView({behavior: "smooth"});
         }, [prop.chat])
 
+        const popup=(msg)=>{
+          if(prop.mode==="black"){
+            toast.success(msg, {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              });
+          }else{
+            toast.success(msg, {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+              });
+          }
+        }
+
   return (
     <div className={`flex flex-col gap-4 overflow-hidden`} ref={parent}>
 
@@ -73,7 +101,7 @@ function ChatBody(prop) {
                           <CopyToClipboard text={message.message}>
                             <button className={BtnClass}
                             style={BtnStyle}
-                            onClick={()=>{alert("Copied ! ")}}>
+                            onClick={()=>popup("Copied !")}>
                               Copy
                             </button>
                           </CopyToClipboard>
@@ -105,6 +133,7 @@ function ChatBody(prop) {
         }
         <div ref={bottomRef} className="h-3">
         </div>
+        <ToastContainer />
     </div>
   )
 }

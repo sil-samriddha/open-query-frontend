@@ -19,6 +19,7 @@
     "react-router-dom": "^6.10.0",
     "react-scroll": "^1.8.9",
     "react-textarea-autosize": "^8.4.1",
+    "react-toastify": "^9.1.2",
     "regenerator-runtime": "^0.13.11",
     "tailwind-scrollbar": "^3.0.0"
   },

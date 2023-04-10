@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Feedback(props) {
 	// Current Date
@@ -18,7 +20,7 @@ function Feedback(props) {
 		}
 		axios.post("https://sheet.best/api/sheets/2c70e2b7-85f1-4405-a6c5-deeabfd5d5ef",data).then((Response)=>{
 			console.log(Response);
-			alert("Submitted ! ")
+			popup("Submitted ! ")
 		})
 
 		setEmail("");
@@ -27,6 +29,33 @@ function Feedback(props) {
   useEffect(() => {
     Aos.init({ duration: 700, offset: 200 });
   }, []);
+
+  const popup=(msg)=>{
+    if(prop.mode==="black"){
+      toast.success(msg, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+    }else{
+      toast.success(msg, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+    }
+  }
+
   return (
     <div>
       <section id="feedback">
@@ -148,6 +177,7 @@ function Feedback(props) {
           </div>
         </div>
       </section>
+      <ToastContainer />
     </div>
   );
 }
