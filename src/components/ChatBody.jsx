@@ -106,7 +106,7 @@ function ChatBody(prop) {
                             </button>
                           </CopyToClipboard>
                           </div>
-                          <div className="py-1 px-1">
+                          <div className="py-1 px-1 hidden sm:inline">
                             <Link to='/'>
                             <button onClick={()=>setTimeout(()=>window.window.scrollTo({top: 3800, behavior: "smooth",}),800)} 
                             className={BtnClass}
