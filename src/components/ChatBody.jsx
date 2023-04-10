@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import autoAnimate from '@formkit/auto-animate';
 import { Link } from 'react-router-dom';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 function ChatBody(prop) {
   // Speech synthesis
@@ -69,11 +70,13 @@ function ChatBody(prop) {
                       {message.sender === "ai" ? (
                         <div className="flex items-stretch flex-wrap justify-center sm:justify-start">
                           <div className="py-1 px-1">
+                          <CopyToClipboard text={message.message}>
                             <button className={BtnClass}
                             style={BtnStyle}
-                            onClick={()=>{navigator.clipboard.writeText(message.message), alert("Copied ! ")}}>
+                            onClick={()=>{alert("Copied ! ")}}>
                               Copy
                             </button>
+                          </CopyToClipboard>
                           </div>
                           <div className="py-1 px-1 hidden sm:inline">
                             <Link to='/'>
