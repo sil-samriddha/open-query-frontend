@@ -1,6 +1,6 @@
 export const fetchResponse =  async(chat) => {
     try {
-        const response = await fetch('https://open-query-backend.vercel.app/', { 
+        const response = await fetch('http://localhost:4000/', { 
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

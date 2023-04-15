@@ -3,11 +3,11 @@ import Footer from '../components/Footer'
 import styles from '../styles/HomeStyle'
 import Feedback from '../components/Feedback'
 import Navbar from '../components/Navbar'
-import MainScreen from '../components/MainScreen'
 import Feature2 from '../components/Feature2'
 import Tech from '../components/Tech'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import HeroScreen from '../components/HeroScreen'
 function HomePage(props) {
     useEffect (()=>{
         Aos.init({duration: 700});
@@ -25,12 +25,12 @@ function HomePage(props) {
         </div>
         <div className={`bg-primary ${styles.flexStart}`}>
             <div className={`${styles.boxWidth}`}>
-            <MainScreen mode={props.mode}/>
+            <HeroScreen mode={props.mode}/>
             </div>
         </div>
         <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
             <div className={`${styles.boxWidth}`}>
-                <h2 id="features" data-aos="fade-in" data-aos-anchor-placement="center-center" className={styles.heading2} align="center">
+                <h2 id="features" data-aos="fade-in" className={styles.heading2} align="center">
                 What makes Open Query the best live chat software?
                 </h2>
                 <div data-aos="fade-up">
