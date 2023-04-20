@@ -38,7 +38,7 @@ function Chatarea(props) {
   }
   return (
     <div
-      className={`sm:pt-0 pt-[10vh] h-screen py-6 relative sm:px-16 px-5 text-${
+      className={`sm:py-6 pt-[10vh] h-screen py-6 relative sm:px-16 px-5 text-${
         props.mode === "black" ? "white" : "[#1A232E]"
       } overflow-hidden flex flex-col justify-between align-middle`}
       style={
